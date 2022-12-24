@@ -1,8 +1,5 @@
 package PackageMain;
-import Controller.login;
-import Model.TasModel;
 import view.*;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
