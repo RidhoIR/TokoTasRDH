@@ -1,6 +1,6 @@
 package PackageMain;
 import Controller.login;
-import Model.DatabaseTas;
+import Model.TasModel;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class Main {
         lgn.loginadmin(1234,5678);
 
         // Entity.tas tas1 = new Entity.tas();
-        DatabaseTas tambah = new DatabaseTas();
+        TasModel tambah = new TasModel();
         // Entity.petugas ptgs = new Entity.petugas();
         Scanner input = new Scanner(System.in);
 

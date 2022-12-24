@@ -16,6 +16,9 @@ public class Tas {
         this.gender = gender;
         this.kodeBarang = kodebarang;
     }
+    public Tas(){
+
+    }
 
     public int getKodeBarang(){
         return kodeBarang;
