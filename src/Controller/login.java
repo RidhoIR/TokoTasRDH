@@ -1,4 +1,5 @@
 package Controller;
+import view.LoginPage_CLI;
 
 import java.util.Scanner;
 public class login {
@@ -14,13 +15,9 @@ public class login {
         id = id1;
         password = pw;
 
-        Scanner loginn = new Scanner(System.in);
+        LoginPage_CLI login = new LoginPage_CLI();
 
-        System.out.print("Masukkan ID User : ");
-        id1 = loginn.nextInt();
 
-        System.out.print("Masukkan Password : ");
-        pw = loginn.nextInt();
 
         if (id1 == id && pw ==password) {
             System.out.println("BERHASIl");
@@ -33,8 +30,7 @@ public class login {
 
         } else {
             System.out.println("GAGAL");
-            login lgn = new login();
-            lgn.loginadmin(1234,5678);
+            login.login();
 
         }
     }
