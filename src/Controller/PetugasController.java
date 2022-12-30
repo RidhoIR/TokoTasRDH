@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class PetugasController {
 
 
-    PetugasModel petugas_m = new PetugasModel();
+   public PetugasModel petugas_m = new PetugasModel();
 
     public PetugasController(){
 
