@@ -99,7 +99,7 @@ public class HomePage_CLI {
 
 
 
-    //    public void UpdateTas(int KodeBarang, String nama, String merk, String warna, String gender, String jenis){
+//        public void UpdateTas(int KodeBarang, String nama, String merk, String warna, String gender, String jenis){
 //        Tas caritas = FindByID(KodeBarang);
 //
 //        if(caritas != null){

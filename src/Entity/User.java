@@ -1,6 +1,6 @@
 package Entity;
 
-public class User {
+public abstract class User {
     protected int id;
     protected String nama;
     protected String telepon;
@@ -9,6 +9,9 @@ public class User {
         this.id = id;
         this.nama = nama;
         this.telepon = telp;
+    }
+
+    public User() {
     }
 
     public int getId() {

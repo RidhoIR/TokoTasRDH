@@ -9,6 +9,10 @@ public class Petugas extends User {
         this.password = pass;
     }
 
+    public Petugas(){
+
+    }
+
     public String getPassword() {
         return password;
     }
@@ -27,11 +31,13 @@ public class Petugas extends User {
         return nama;
     }
 
-    public void setTelp(String telp){
+    @Override
+    public void setTelepon(String telp){
         this.telepon = telp;
     }
 
-    public String getTelp(){
+    @Override
+    public String getTelepon(){
         return telepon;
     }
 
