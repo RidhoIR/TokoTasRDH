@@ -1,7 +1,5 @@
 package view;
 
-import Controller.AllObjekController;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;

@@ -1,6 +1,7 @@
 package Controller;
 import Entity.*;
 import Model.*;
+import view.AllObjekController;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
@@ -48,10 +49,10 @@ public class Tas_Controller {
             Object [] tas = new Object[6];
             tas[0] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getKodeBarang();
             tas[1] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getNama();
-            tas[2] = AllObjekController.tas_c.view().get(i).getMerk();
-            tas[3] = AllObjekController.tas_c.view().get(i).getWarna();
-            tas[4] = AllObjekController.tas_c.view().get(i).getJenis();
-            tas[5] = AllObjekController.tas_c.view().get(i).getGender();
+            tas[2] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getMerk();
+            tas[3] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getWarna();
+            tas[4] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getJenis();
+            tas[5] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getGender();
             dtmlisttas.addRow(tas);
         }
         return dtmlisttas;

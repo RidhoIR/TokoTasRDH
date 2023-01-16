@@ -1,6 +1,5 @@
 package view;
 
-import Controller.AllObjekController;
 import Controller.Tas_Controller;
 
 import javax.swing.*;
@@ -26,7 +25,9 @@ public class HomeFrame_GUI extends MainFrame_GUI {
     @Override
     protected void component(){
 
-        tabel.setModel(AllObjekController.tas_c.listbuku());
+        tabel.setModel(tas_c.listbuku());
+        setFontSize(scroll,12);
+        setFontSize(tabel,9);
         boundedAdd(scroll,150,200,700,300);
 
 
@@ -97,15 +98,16 @@ public class HomeFrame_GUI extends MainFrame_GUI {
 
     }
 
-    @Override
-    protected void event() {
+    
+    public void event() {
         tambahBtn.addActionListener(e -> {
+            String kode = kodeField.getText();
             String nama = namaField.getText();
             String merk = merkField.getText();
             String warna =  warnaField.getText();
             String jenis = jenisField.getText();
             String gender = genderField.getText();
-            String kode = kodeField.getText();
+
 
             try{
                 AllObjekController.tas_c.insert(kode,nama,merk,warna,gender,jenis);
@@ -113,11 +115,27 @@ public class HomeFrame_GUI extends MainFrame_GUI {
                         "information",JOptionPane.INFORMATION_MESSAGE);
                 tabel.setModel(AllObjekController.tas_c.listbuku());
                 reset();
+
             }catch (Exception exception){
                 JOptionPane.showMessageDialog(null,"salah"+exception,
                         "information",JOptionPane.INFORMATION_MESSAGE);
             }
 
+        });
+
+        tabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int i = tabel.getSelectedRow();
+                index = i;
+                kodeField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
+                namaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,1).toString());
+                merkField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,2).toString());
+                warnaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,3).toString());
+                jenisField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,4).toString());
+                genderField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,5).toString());
+
+            }
         });
 
         updateBtn.addActionListener(e -> {
@@ -142,8 +160,6 @@ public class HomeFrame_GUI extends MainFrame_GUI {
         });
 
         hapusBtn.addActionListener(e -> {
-
-
             try{
                 AllObjekController.tas_c.delete(index);
                 JOptionPane.showMessageDialog(null,"input sukses",
@@ -159,24 +175,11 @@ public class HomeFrame_GUI extends MainFrame_GUI {
 
 
 
-        tabel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                int i = tabel.getSelectedRow();
-                index = i;
-                kodeField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
-                namaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,1).toString());
-                merkField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,2).toString());
-                warnaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,3).toString());
-                jenisField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,4).toString());
-                genderField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,5).toString());
 
-            }
-        });
 
     }
 
-    void reset(){
+    public void reset(){
         namaField.setText(null);
         merkField.setText(null);
         warnaField.setText(null);
