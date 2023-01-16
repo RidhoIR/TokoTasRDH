@@ -2,10 +2,10 @@ package view;
 
 import java.util.Scanner;
 
-public class HomePage_CLI {
+public class HomePage {
 
     Scanner input = new Scanner(System.in);
-    PetugasPage_CLI petugas_p = new PetugasPage_CLI();
+//    PetugasPage_CLI petugas_p = new PetugasPage_CLI();
     TasPage_CLI tas_p = new TasPage_CLI();
 
     public void menuUtama(){
@@ -24,7 +24,7 @@ public class HomePage_CLI {
                     tas_p.menu();
                     break;
                 case 2:
-                    petugas_p.menu();
+//                    petugas_p.menu();
                     break;
                 default:
                     System.out.println("pilihan tidak ada!!");

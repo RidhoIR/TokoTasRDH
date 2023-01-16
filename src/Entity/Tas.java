@@ -6,9 +6,9 @@ public class Tas {
     public String warna;
     public String jenis;
     public String gender;
-    public int kodeBarang;
+    public String kodeBarang;
 
-    public Tas(int kodebarang, String nama , String merk, String warna , String jenis, String gender){
+    public Tas(String kodebarang, String nama , String merk, String warna , String jenis, String gender){
         this.nama = nama;
         this.merk = merk;
         this.warna = warna;
@@ -20,7 +20,7 @@ public class Tas {
 
     }
 
-    public int getKodeBarang(){
+    public String getKodeBarang(){
         return kodeBarang;
     }
 
@@ -44,7 +44,7 @@ public class Tas {
         return gender;
     }
 
-    public void setKodebarang(int KodeBarang){
+    public void setKodebarang(String KodeBarang){
         this.kodeBarang = KodeBarang;
     }
 

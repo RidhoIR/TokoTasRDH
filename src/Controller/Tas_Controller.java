@@ -2,12 +2,13 @@ package Controller;
 import Entity.*;
 import Model.*;
 
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
-public class TasController {
+public class Tas_Controller {
     public TasModel tas_model = new TasModel();
 
-    public TasController(){
+    public Tas_Controller(){
 
     }
 
@@ -16,7 +17,7 @@ public class TasController {
 
     }
 
-    public void insert(int KodeBarang, String nama, String merk,String warna, String Gender, String Jenis){
+    public void insert(String KodeBarang, String nama, String merk,String warna, String Gender, String Jenis){
         Tas tas = new Tas();
         tas.setKodebarang(KodeBarang);
         tas.setNama(nama);
@@ -27,7 +28,7 @@ public class TasController {
         tas_model.insert(tas);
     }
 
-    public void update(int index,int KodeBarang, String nama, String merk,String warna, String Gender, String Jenis){
+    public void update(int index,String KodeBarang, String nama, String merk,String warna, String Gender, String Jenis){
         Tas tas = new Tas();
         tas.setKodebarang(KodeBarang);
         tas.setNama(nama);
@@ -36,6 +37,24 @@ public class TasController {
         tas.setJenis(Jenis);
         tas.setGender(Gender);
         tas_model.update(index,tas);
+    }
+
+    public DefaultTableModel listbuku(){
+        DefaultTableModel dtmlisttas = new DefaultTableModel();
+        Object[] kolom ={"Kode","Nama","Merk","Warna","Jenis","Gender"};
+        dtmlisttas.setColumnIdentifiers(kolom);
+        int size = AllObjekController.tas_c.tas_model.getDataTas().size();
+        for (int i=0; i<size; i++){
+            Object [] tas = new Object[6];
+            tas[0] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getKodeBarang();
+            tas[1] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getNama();
+            tas[2] = AllObjekController.tas_c.view().get(i).getMerk();
+            tas[3] = AllObjekController.tas_c.view().get(i).getWarna();
+            tas[4] = AllObjekController.tas_c.view().get(i).getJenis();
+            tas[5] = AllObjekController.tas_c.view().get(i).getGender();
+            dtmlisttas.addRow(tas);
+        }
+        return dtmlisttas;
     }
 
     public void delete(int index){

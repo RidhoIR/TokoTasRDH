@@ -1,11 +1,11 @@
 package Entity;
 
 public abstract class User {
-    protected int id;
+    protected String id;
     protected String nama;
     protected String telepon;
 
-    public User(int id, String nama, String telp){
+    public User(String id, String nama, String telp){
         this.id = id;
         this.nama = nama;
         this.telepon = telp;
@@ -14,11 +14,11 @@ public abstract class User {
     public User() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

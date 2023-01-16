@@ -15,11 +15,11 @@ public class TasModel implements InterfaceModel {
         return ListTas;
     }
 
-    public static void initialData(){
-        Tas tas = new Tas(1,"Dior","Gucci","merah","Backpack","Unisex");
-
-        ListTas.add(tas);
-    }
+//    public static void initialData(){
+//        Tas tas = new Tas(1,"Dior","Gucci","merah","Backpack","Unisex");
+//
+//        ListTas.add(tas);
+//    }
 
     @Override
     public void insert(Object x){

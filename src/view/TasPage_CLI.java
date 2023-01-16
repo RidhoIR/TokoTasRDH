@@ -5,7 +5,7 @@ import Controller.*;
 
 public class TasPage_CLI {
     Scanner input = new Scanner(System.in);
-    public TasController tas = new TasController();
+    public Tas_Controller tas = new Tas_Controller();
 
     public void menu(){
         int pilih;
@@ -42,7 +42,7 @@ public class TasPage_CLI {
 
     public void insert(){
         System.out.print("Kode Barang : ");
-        int kode = input.nextInt();
+        String kode = input.nextLine();
         input.nextLine();
         System.out.print("Masukkan Tipe Tas : ");
         String nama = input.nextLine();
@@ -60,7 +60,7 @@ public class TasPage_CLI {
         System.out.print("index barang ke - : ");
         int index = input.nextInt();
         System.out.print("Kode Barang : ");
-        int kode = input.nextInt();
+        String kode = input.nextLine();
         input.nextLine();
         System.out.print("Masukkan Tipe Tas : ");
         String nama = input.nextLine();

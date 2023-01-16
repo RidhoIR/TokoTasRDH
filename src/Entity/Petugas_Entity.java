@@ -1,15 +1,15 @@
 package Entity;
 
-public class Petugas extends User {
+public class Petugas_Entity extends User {
 
     private String password;
 
-    public Petugas(int id, String nama, String telp, String pass){
+    public Petugas_Entity(String id, String nama, String telp, String pass){
         super(id,nama,telp);
         this.password = pass;
     }
 
-    public Petugas(){
+    public Petugas_Entity(){
 
     }
 
@@ -42,12 +42,12 @@ public class Petugas extends User {
     }
 
     @Override
-    public void setId(int id){
+    public void setId(String id){
         this.id = id;
     }
 
     @Override
-    public int getId(){
+    public String getId(){
         return id;
     }
 }
