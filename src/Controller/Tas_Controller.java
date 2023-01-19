@@ -42,11 +42,11 @@ public class Tas_Controller {
 
     public DefaultTableModel listbuku(){
         DefaultTableModel dtmlisttas = new DefaultTableModel();
-        Object[] kolom ={"Kode","Nama","Merk","Warna","Jenis","Gender"};
+        Object[] kolom ={"Nama","Merk","Warna","Jenis","Gender"};
         dtmlisttas.setColumnIdentifiers(kolom);
         int size = AllObjekController.tas_c.view().size();
         for (int i=0; i<size; i++){
-            Object [] tas = new Object[5];
+            Object [] tas = new Object[6];
 //            tas[0] = AllObjekController.tas_c.tas_model.getDataTas().get(i).getKodeBarang();
             tas[0] = AllObjekController.tas_c.view().get(i).getNama();
             tas[1] = AllObjekController.tas_c.view().get(i).getMerk();

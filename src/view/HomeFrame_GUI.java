@@ -10,9 +10,9 @@ import java.awt.event.ActionListener;
 
 public class HomeFrame_GUI extends MainFrame_GUI {
 
-    private JLabel namaLabel,merkLabel,warnaLabel,jenisLabel,genderLabel,kodeLabel;
-    private  JTextField namaField,merkField,warnaField,jenisField,genderField,kodeField;
-    private JButton tambahBtn,updateBtn,hapusBtn;
+    public JLabel namaLabel,merkLabel,warnaLabel,jenisLabel,genderLabel,kodeLabel;
+    public  JTextField namaField,merkField,warnaField,jenisField,genderField,kodeField;
+    public JButton tambahBtn,updateBtn,hapusBtn;
     public JTable tabel = new JTable();
     public JScrollPane scroll = new JScrollPane(tabel);
     int index;
@@ -117,9 +117,9 @@ public class HomeFrame_GUI extends MainFrame_GUI {
                     String gender = genderField.getText();
 
                     AllObjekController.tas_c.insert(nama,merk,warna,gender,jenis);
+                    tabel.setModel(AllObjekController.tas_c.listbuku());
                     JOptionPane.showMessageDialog(null,"input sukses",
                             "information",JOptionPane.INFORMATION_MESSAGE);
-                    tabel.setModel(AllObjekController.tas_c.listbuku());
 
 
                 }catch (Exception exception){
@@ -160,12 +160,12 @@ public class HomeFrame_GUI extends MainFrame_GUI {
             public void mouseClicked(MouseEvent e) {
                 int i = tabel.getSelectedRow();
                 index = i;
-                kodeField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
-                namaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,1).toString());
-                merkField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,2).toString());
-                warnaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,3).toString());
-                jenisField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,4).toString());
-                genderField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,5).toString());
+//                kodeField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
+                namaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
+                merkField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,1).toString());
+                warnaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,2).toString());
+                jenisField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,3).toString());
+                genderField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,4).toString());
 
             }
         });
