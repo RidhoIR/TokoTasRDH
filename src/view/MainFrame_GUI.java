@@ -6,10 +6,25 @@ import java.awt.Component;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+
+import java.awt.Component;
+import java.awt.Font;
+
+import javax.imageio.ImageIO;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 
 public abstract class MainFrame_GUI extends JFrame {
 
+
+    private ImageIcon image = new ImageIcon("mylogo.png");
     protected Color backgroundColor = Color.decode("#F0F0F0");
     protected Color primaryColor = Color.decode("#2490EC");
     protected Color secondaryColor = Color.decode("#D9D9D9");
@@ -22,7 +37,7 @@ public abstract class MainFrame_GUI extends JFrame {
         setSize(width, height);
         setLayout(null);
         setLocation(600, 200);
-//        setIconImage(image.getImage());
+        setIconImage(image.getImage());
         setBackground(backgroundColor);
     }
 
@@ -64,28 +79,28 @@ public abstract class MainFrame_GUI extends JFrame {
         tabell.setModel((TableModel) tabel);
     }
 
-// protected ImageIcon loadImage(String imagePath) {
-//     return loadImage(imagePath, 150, 150);
-// }
+ protected ImageIcon loadImage(String imagePath) {
+     return loadImage(imagePath, 150, 150);
+ }
 
-// protected ImageIcon loadImage(String imagePath, int width, int height) {
-//     try {
-//         BufferedImage bImage;
-//         Image imgResize;
-//         ImageIcon imgIcon = null;
-    //         bImage = ImageIO.read(new File(imagePath));
+ protected ImageIcon loadImage(String imagePath, int width, int height) {
+     try {
+         BufferedImage bImage;
+         Image imgResize;
+         ImageIcon imgIcon = null;
+             bImage = ImageIO.read(new File(imagePath));
 
-    //         imgResize = bImage.getScaledInstance(
-    //                 width, height,
-    //                 Image.SCALE_SMOOTH);
+             imgResize = bImage.getScaledInstance(
+                     width, height,
+                     Image.SCALE_SMOOTH);
 
-    //         imgIcon = new ImageIcon(imgResize);
+             imgIcon = new ImageIcon(imgResize);
 
-    //         return imgIcon;
-    //     } catch (IOException ex) {
-    //         return null;
-    //     }
-    // }
+             return imgIcon;
+         } catch (IOException ex) {
+             return null;
+         }
+     }
 
     protected void setFontStyle(Component comp, int style) {
         Font fontLama = comp.getFont();

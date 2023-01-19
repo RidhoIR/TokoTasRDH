@@ -41,9 +41,9 @@ public class TasPage_CLI {
     }
 
     public void insert(){
-//        System.out.print("Kode Barang : ");
-//        String kode = input.nextLine();
-//        input.nextLine();
+        System.out.print("Kode Barang : ");
+        int kode = input.nextInt();
+        input.nextLine();
         System.out.print("Masukkan Tipe Tas : ");
         String nama = input.nextLine();
         input.next();
@@ -55,14 +55,14 @@ public class TasPage_CLI {
         String jenis = input.nextLine();
         System.out.print("Masukkan Gender : ");
         String gender = input.nextLine();
-        AllObjekController.tas_c.insert(nama,merk,warna,jenis,gender);
+        AllObjekController.tas_c.insert(kode,nama,merk,warna,jenis,gender);
     }
     public void Update(){
         System.out.print("index barang ke - : ");
         int index = input.nextInt();
+        System.out.print("Kode Barang : ");
+        int kode = input.nextInt();
         input.nextLine();
-//        System.out.print("Kode Barang : ");
-//        String kode = input.nextLine();
         System.out.print("Masukkan Tipe Tas : ");
         String nama = input.nextLine();
         System.out.print("Masukkan Merk : ");
@@ -73,7 +73,7 @@ public class TasPage_CLI {
         String jenis = input.nextLine();
         System.out.print("Masukkan Gender : ");
         String gender = input.nextLine();
-        AllObjekController.tas_c.update(index,nama,merk,warna,jenis,gender);
+        AllObjekController.tas_c.update(index,kode,nama,merk,warna,jenis,gender);
     }
 
     public void Delete(){

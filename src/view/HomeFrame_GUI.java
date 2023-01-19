@@ -28,7 +28,7 @@ public class HomeFrame_GUI extends MainFrame_GUI {
 
         tabel.setModel(tas_c.listbuku());
         setFontSize(scroll,12);
-        setFontSize(tabel,9);
+        setFontSize(tabel,12);
         boundedAdd(scroll,150,200,700,300);
 
 
@@ -108,14 +108,14 @@ public class HomeFrame_GUI extends MainFrame_GUI {
             public void actionPerformed(ActionEvent e) {
 
                 try{
-                    String kode = kodeField.getText();
+                    int kode = Integer.valueOf(kodeField.getText());
                     String nama = namaField.getText();
                     String merk = merkField.getText();
                     String warna =  warnaField.getText();
                     String jenis = jenisField.getText();
                     String gender = genderField.getText();
 
-                    AllObjekController.tas_c.insert(nama,merk,warna,gender,jenis);
+                    AllObjekController.tas_c.insert(kode,nama,merk,warna,gender,jenis);
 
                     JOptionPane.showMessageDialog(null,"input sukses",
                             "information",JOptionPane.INFORMATION_MESSAGE);
@@ -160,12 +160,12 @@ public class HomeFrame_GUI extends MainFrame_GUI {
             public void mouseClicked(MouseEvent e) {
                 int i = tabel.getSelectedRow();
                 index = i;
-//                kodeField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
-                namaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
-                merkField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,1).toString());
-                warnaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,2).toString());
-                jenisField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,3).toString());
-                genderField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,4).toString());
+                kodeField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,0).toString());
+                namaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,1).toString());
+                merkField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,2).toString());
+                warnaField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,3).toString());
+                jenisField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,4).toString());
+                genderField.setText(AllObjekController.tas_c.listbuku().getValueAt(i,5).toString());
 
             }
         });
@@ -178,10 +178,10 @@ public class HomeFrame_GUI extends MainFrame_GUI {
             String warna =  warnaField.getText();
             String jenis = jenisField.getText();
             String gender = genderField.getText();
-            String kode = kodeField.getText();
+            int kode = Integer.valueOf(kodeField.getText());
 
 
-                AllObjekController.tas_c.update(index,nama,merk,warna,gender,jenis);
+                AllObjekController.tas_c.update(index,kode,nama,merk,warna,gender,jenis);
                 JOptionPane.showMessageDialog(null,"input sukses",
                         "information",JOptionPane.INFORMATION_MESSAGE);
                 tabel.setModel(AllObjekController.tas_c.listbuku());

@@ -108,14 +108,14 @@ public class TasFrame_GUI {
             public void actionPerformed(ActionEvent e) {
 
                 try{
-                    String kode = kodeField.getText();
+                    int kode = Integer.valueOf(kodeField.getText());
                     String nama = namaField.getText();
                     String merk = merkField.getText();
                     String warna =  warnaField.getText();
                     String jenis = jenisField.getText();
                     String gender = genderField.getText();
 
-                    AllObjekController.tas_c.insert(nama,merk,warna,gender,jenis);
+                    AllObjekController.tas_c.insert(kode,nama,merk,warna,gender,jenis);
                     JOptionPane.showMessageDialog(null,"input sukses",
                             "information",JOptionPane.INFORMATION_MESSAGE);
                     tabeltas.setModel(AllObjekController.tas_c.listbuku());

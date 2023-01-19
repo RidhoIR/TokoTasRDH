@@ -6,23 +6,23 @@ public class Tas {
     private String warna;
     private String jenis;
     private String gender;
-//    public String kodeBarang;
+    private int kodeBarang;
 
-    public Tas( String nama , String merk, String warna , String jenis, String gender){
+    public Tas(int kodebarang, String nama , String merk, String warna , String jenis, String gender){
         this.nama = nama;
         this.merk = merk;
         this.warna = warna;
         this.jenis = jenis;
         this.gender = gender;
-//        this.kodeBarang = kodebarang;
+        this.kodeBarang = kodebarang;
     }
     public Tas(){
 
     }
 
-//    public String getKodeBarang(){
-//        return kodeBarang;
-//    }
+    public int getKodeBarang(){
+        return kodeBarang;
+    }
 
     public String getNama(){
         return nama;
@@ -44,9 +44,9 @@ public class Tas {
         return gender;
     }
 
-//    public void setKodebarang(String KodeBarang){
-//        this.kodeBarang = KodeBarang;
-//    }
+    public void setKodebarang(int KodeBarang){
+        this.kodeBarang = KodeBarang;
+    }
 
     public void setNama(String nama ){
         this.nama = nama;

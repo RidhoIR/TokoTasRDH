@@ -12,11 +12,11 @@ import javax.swing.JTextField;
 import java.awt.Font;
 
 public class LoginFrame_GUI extends MainFrame_GUI {
-    private JLabel userLabel, passLabel, logoLabel, registLabel;
+    private JLabel userLabel, passLabel, logoLabel, registLabel,iconLabel;
     private JTextField UsernameField;
     private JPasswordField PasswordField;
     private JButton loginButton, registButton;
-    private ImageIcon logo = new ImageIcon("logo.png");
+    private ImageIcon logo = new ImageIcon("mylogo.png");
 
     public LoginFrame_GUI(){
         super("Login",415, 560);
@@ -25,6 +25,11 @@ public class LoginFrame_GUI extends MainFrame_GUI {
     }
 
     protected void component(){
+
+
+        ImageIcon imgLoad = loadImage("mylogo.png", 195, 195);
+        iconLabel = new JLabel(imgLoad);
+        boundedAdd(iconLabel, 103, 30, 195, 195);
 
         logoLabel = new JLabel();
         logoLabel.setText("RDH-Store");
