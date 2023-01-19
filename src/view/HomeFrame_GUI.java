@@ -117,10 +117,11 @@ public class HomeFrame_GUI extends MainFrame_GUI {
                     String gender = genderField.getText();
 
                     AllObjekController.tas_c.insert(nama,merk,warna,gender,jenis);
-                    tabel.setModel(AllObjekController.tas_c.listbuku());
+
                     JOptionPane.showMessageDialog(null,"input sukses",
                             "information",JOptionPane.INFORMATION_MESSAGE);
-
+                    reset();
+                    tabel.setModel(AllObjekController.tas_c.listbuku());
 
                 }catch (Exception exception){
                     JOptionPane.showMessageDialog(null,"salah"+exception,

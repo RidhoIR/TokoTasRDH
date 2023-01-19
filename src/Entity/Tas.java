@@ -1,11 +1,11 @@
 package Entity;
 
 public class Tas {
-    public String nama;
-    public String merk;
-    public String warna;
-    public String jenis;
-    public String gender;
+    private String nama;
+    private String merk;
+    private String warna;
+    private String jenis;
+    private String gender;
 //    public String kodeBarang;
 
     public Tas( String nama , String merk, String warna , String jenis, String gender){
