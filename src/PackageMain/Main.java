@@ -8,6 +8,8 @@ public class Main {
 //        login.login();
 //        HomePage_CLI page = new HomePage_CLI();
 //        page.menuUtama();
+//        TasPage_CLI page = new TasPage_CLI();
+//        page.menu();
 
 //        FramePage_GUI frame = new FramePage_GUI();
 //        frame.setVisible(true);

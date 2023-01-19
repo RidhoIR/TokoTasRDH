@@ -3,8 +3,10 @@ package view;
 import Controller.Tas_Controller;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
 
 public class HomeFrame_GUI extends MainFrame_GUI {
 
@@ -98,30 +100,60 @@ public class HomeFrame_GUI extends MainFrame_GUI {
 
     }
 
+
     
     public void event() {
-        tambahBtn.addActionListener(e -> {
-            String kode = kodeField.getText();
-            String nama = namaField.getText();
-            String merk = merkField.getText();
-            String warna =  warnaField.getText();
-            String jenis = jenisField.getText();
-            String gender = genderField.getText();
+
+        tambahBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try{
+                    String kode = kodeField.getText();
+                    String nama = namaField.getText();
+                    String merk = merkField.getText();
+                    String warna =  warnaField.getText();
+                    String jenis = jenisField.getText();
+                    String gender = genderField.getText();
+
+                    AllObjekController.tas_c.insert(nama,merk,warna,gender,jenis);
+                    JOptionPane.showMessageDialog(null,"input sukses",
+                            "information",JOptionPane.INFORMATION_MESSAGE);
+                    tabel.setModel(AllObjekController.tas_c.listbuku());
 
 
-            try{
-                AllObjekController.tas_c.insert(kode,nama,merk,warna,gender,jenis);
-                JOptionPane.showMessageDialog(null,"input sukses",
-                        "information",JOptionPane.INFORMATION_MESSAGE);
-                tabel.setModel(AllObjekController.tas_c.listbuku());
-                reset();
-
-            }catch (Exception exception){
-                JOptionPane.showMessageDialog(null,"salah"+exception,
-                        "information",JOptionPane.INFORMATION_MESSAGE);
+                }catch (Exception exception){
+                    JOptionPane.showMessageDialog(null,"salah"+exception,
+                            "information",JOptionPane.INFORMATION_MESSAGE);
+                }
             }
+        } );
 
-        });
+
+//        tambahBtn.addActionListener(e -> {
+//
+//
+//            int kode = Integer.valueOf(kodeField.getText());
+//            String nama = namaField.getText();
+//            String merk = merkField.getText();
+//            String warna =  warnaField.getText();
+//            String jenis = jenisField.getText();
+//            String gender = genderField.getText();
+//
+//
+//            try{
+//                AllObjekController.tas_c.insert(kode,nama,merk,warna,gender,jenis);
+//                JOptionPane.showMessageDialog(null,"input sukses",
+//                        "information",JOptionPane.INFORMATION_MESSAGE);
+//                tabel.setModel(AllObjekController.tas_c.listbuku());
+//                reset();
+//
+//            }catch (Exception exception){
+//                JOptionPane.showMessageDialog(null,"salah"+exception,
+//                        "information",JOptionPane.INFORMATION_MESSAGE);
+//            }
+//
+//        });
 
         tabel.addMouseListener(new MouseAdapter() {
             @Override
@@ -139,6 +171,8 @@ public class HomeFrame_GUI extends MainFrame_GUI {
         });
 
         updateBtn.addActionListener(e -> {
+
+            try{
             String nama = namaField.getText();
             String merk = merkField.getText();
             String warna =  warnaField.getText();
@@ -146,8 +180,8 @@ public class HomeFrame_GUI extends MainFrame_GUI {
             String gender = genderField.getText();
             String kode = kodeField.getText();
 
-            try{
-                AllObjekController.tas_c.update(index,kode,nama,merk,warna,gender,jenis);
+
+                AllObjekController.tas_c.update(index,nama,merk,warna,gender,jenis);
                 JOptionPane.showMessageDialog(null,"input sukses",
                         "information",JOptionPane.INFORMATION_MESSAGE);
                 tabel.setModel(AllObjekController.tas_c.listbuku());

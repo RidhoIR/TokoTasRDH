@@ -41,11 +41,12 @@ public class TasPage_CLI {
     }
 
     public void insert(){
-        System.out.print("Kode Barang : ");
-        String kode = input.nextLine();
-        input.nextLine();
+//        System.out.print("Kode Barang : ");
+//        String kode = input.nextLine();
+//        input.nextLine();
         System.out.print("Masukkan Tipe Tas : ");
         String nama = input.nextLine();
+        input.next();
         System.out.print("Masukkan Merk : ");
         String merk = input.nextLine();
         System.out.print("Masukkan Warna : ");
@@ -54,14 +55,14 @@ public class TasPage_CLI {
         String jenis = input.nextLine();
         System.out.print("Masukkan Gender : ");
         String gender = input.nextLine();
-        tas.insert(kode,nama,merk,warna,jenis,gender);
+        AllObjekController.tas_c.insert(nama,merk,warna,jenis,gender);
     }
     public void Update(){
         System.out.print("index barang ke - : ");
         int index = input.nextInt();
-        System.out.print("Kode Barang : ");
-        String kode = input.nextLine();
         input.nextLine();
+//        System.out.print("Kode Barang : ");
+//        String kode = input.nextLine();
         System.out.print("Masukkan Tipe Tas : ");
         String nama = input.nextLine();
         System.out.print("Masukkan Merk : ");
@@ -72,7 +73,7 @@ public class TasPage_CLI {
         String jenis = input.nextLine();
         System.out.print("Masukkan Gender : ");
         String gender = input.nextLine();
-        tas.update(index,kode,nama,merk,warna,jenis,gender);
+        AllObjekController.tas_c.update(index,nama,merk,warna,jenis,gender);
     }
 
     public void Delete(){
@@ -83,14 +84,14 @@ public class TasPage_CLI {
     }
 
     public void view(){
-        for(int i = 0; i<tas.tas_model.getDataTas().size(); i++){
+        for(int i = 0; i<AllObjekController.tas_c.view().size(); i++){
             System.out.println("========================");
-            System.out.println("kode : "+tas.tas_model.getDataTas().get(i).getKodeBarang());
-            System.out.println("Tipe : "+tas.tas_model.getDataTas().get(i).getNama());
-            System.out.println("Merk : "+tas.tas_model.getDataTas().get(i).getMerk());
-            System.out.println("Warna : "+tas.tas_model.getDataTas().get(i).getWarna());
-            System.out.println("Jenis : "+tas.tas_model.getDataTas().get(i).getJenis());
-            System.out.println("Gender : "+tas.tas_model.getDataTas().get(i).getGender());
+//            System.out.println("kode : "+AllObjekController.tas_c.view().get(i).getKodeBarang());
+            System.out.println("Tipe : "+AllObjekController.tas_c.view().get(i).getNama());
+            System.out.println("Merk : "+AllObjekController.tas_c.view().get(i).getMerk());
+            System.out.println("Warna : "+AllObjekController.tas_c.view().get(i).getWarna());
+            System.out.println("Jenis : "+AllObjekController.tas_c.view().get(i).getJenis());
+            System.out.println("Gender : "+AllObjekController.tas_c.view().get(i).getGender());
 
         }
         System.out.println("========================");

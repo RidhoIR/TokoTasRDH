@@ -39,7 +39,7 @@ public class PetugasModel implements InterfaceModel {
     public int cekPetugas(String id, String password){
         int loop = 0;
         for(Petugas_Entity petugasEntity : getDataPetugas()){
-            if(petugasEntity.getId() == id && petugasEntity.getPassword().equals(password)){
+            if(petugasEntity.getId().equals(id) && petugasEntity.getPassword().equals(password)){
                 break;
             }else{
                 loop++;
