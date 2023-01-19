@@ -56,9 +56,9 @@ public class Petugas_Controller {
         }
     }
 
-    public void cekPetugas (String id, String password){
-        loginpetugas = petugas_m.cekPetugas(id,password);
-    }
+//    public void cekPetugas (String id, String password){
+//        loginpetugas = petugas_m.cekPetugas(id,password);
+//    }
 
     public boolean register(Petugas_Entity petugas){
         for(Petugas_Entity akun : petugas_m.getDataPetugas()){

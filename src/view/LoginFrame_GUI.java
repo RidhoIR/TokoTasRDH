@@ -77,16 +77,20 @@ public class LoginFrame_GUI extends MainFrame_GUI {
 
         loginButton.addActionListener(e -> {
 
-            try{
+
                 AllObjekController.petugas_c.dataPetugas();
-                AllObjekController.petugas_c.cekPetugas(UsernameField.getText(),PasswordField.getText());
-                JOptionPane.showMessageDialog(null,"berhasil login",
-                        "information",JOptionPane.INFORMATION_MESSAGE);
-                new HomeFrame_GUI().setVisible(true);
-                dispose();
-            }catch (Exception exception){
-                JOptionPane.showMessageDialog(null,"NPM atau password salah","information",JOptionPane.INFORMATION_MESSAGE);
-            }
+                if (AllObjekController.petugas_c.petugas_m.cekPetugas(UsernameField.getText(),PasswordField.getText())){
+                    JOptionPane.showMessageDialog(null,"berhasil login",
+                            "information",JOptionPane.INFORMATION_MESSAGE);
+                    new HomeFrame_GUI().setVisible(true);
+                    dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null,"NPM atau password salah","information",JOptionPane.INFORMATION_MESSAGE);
+                }
+
+
+
+
 
 //            if(petugas_c.login(username, password)){
 //                JOptionPane.showMessageDialog(null,"berhasil login",

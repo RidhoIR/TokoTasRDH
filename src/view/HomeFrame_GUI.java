@@ -20,8 +20,7 @@ public class HomeFrame_GUI extends MainFrame_GUI {
 
     public HomeFrame_GUI(){
         super("Home",900,700);
-        component();
-        event();
+
     }
 
     @Override

@@ -36,15 +36,15 @@ public class PetugasModel implements InterfaceModel {
         return list.get(index);
     }
 
-    public int cekPetugas(String id, String password){
-        int loop = 0;
+    Petugas_Entity user = null;
+
+    public boolean cekPetugas(String id, String password){
         for(Petugas_Entity petugasEntity : getDataPetugas()){
-            if(petugasEntity.getId().equals(id) && petugasEntity.getPassword().equals(password)){
-                break;
-            }else{
-                loop++;
+            if(petugasEntity.getNama().equals(id) && petugasEntity.getPassword().equals(password)){
+                user = petugasEntity;
+                return true;
             }
         }
-        return loop;
-    };
+        return false;
+    }
 }
