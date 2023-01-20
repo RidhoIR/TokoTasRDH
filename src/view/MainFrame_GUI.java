@@ -5,18 +5,12 @@ import javax.swing.table.TableModel;
 import java.awt.Component;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 
-import java.awt.Component;
-import java.awt.Font;
-
 import javax.imageio.ImageIO;
-import java.awt.Color;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -24,8 +18,8 @@ import java.io.IOException;
 public abstract class MainFrame_GUI extends JFrame {
 
 
-    private ImageIcon image = new ImageIcon("mylogo.png");
-    protected Color backgroundColor = Color.decode("#F0F0F0");
+    private ImageIcon image = new ImageIcon("src/assets/p.png");
+    protected Color backgroundColor = Color.decode("#2490EC");
     protected Color primaryColor = Color.decode("#2490EC");
     protected Color secondaryColor = Color.decode("#D9D9D9");
 
@@ -37,6 +31,7 @@ public abstract class MainFrame_GUI extends JFrame {
         setSize(width, height);
         setLayout(null);
         setLocation(600, 200);
+        getContentPane().setBackground(new Color(255,255,0));
         setIconImage(image.getImage());
         setBackground(backgroundColor);
     }
